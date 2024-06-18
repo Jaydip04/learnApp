@@ -11,9 +11,8 @@ class FormWidget extends StatefulWidget {
 }
 
 class _FormWidgetState extends State<FormWidget> {
-
   String? validatePhone(String? value) {
-    const pattern =r'[7,8,9][0-9]{9}';
+    const pattern = r'[7,8,9][0-9]{9}';
     final regex = RegExp(pattern);
 
     return value!.isNotEmpty && !regex.hasMatch(value)
@@ -83,7 +82,10 @@ class _FormWidgetState extends State<FormWidget> {
       appBar: AppBar(
         backgroundColor: Colors.indigo,
         centerTitle: true,
-        title: const Text("Add Information",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+        title: const Text(
+          "Add Information",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
       ),
       body: Container(
         // color: bgcolor,
@@ -94,55 +96,69 @@ class _FormWidgetState extends State<FormWidget> {
               const SizedBox(
                 height: 25,
               ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              child: TextFormField(
-                maxLength: 100,
-                autovalidateMode: AutovalidateMode.always,
-                inputFormatters: <TextInputFormatter>[ FilteringTextInputFormatter.singleLineFormatter,],
-                keyboardType: TextInputType.name,
-                controller: nameController,
-                obscureText: false,
-                style: TextStyle(
-                    color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500),
-                decoration: InputDecoration(
-                  hintText: "Name",
-                  hintStyle: TextStyle(color: Colors.black),
-                  filled: true,
-                ),
-              ),
-            ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: TextFormField(
-                  maxLength: 10,
+                  maxLength: 100,
                   autovalidateMode: AutovalidateMode.always,
-                  validator: validatePhone,
-                  inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly,],
-                  keyboardType: TextInputType.phone,
-                  controller: phoneController,
+                  inputFormatters: <TextInputFormatter>[
+                    FilteringTextInputFormatter.singleLineFormatter,
+                  ],
+                  keyboardType: TextInputType.name,
+                  controller: nameController,
                   obscureText: false,
                   style: TextStyle(
-                      color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500),
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
                   decoration: InputDecoration(
-                    hintText: "Phone",
+                    hintText: "Name",
                     hintStyle: TextStyle(color: Colors.black),
                     filled: true,
-
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                child: TextFormField(
+                  maxLength: 10,
+                  autovalidateMode: AutovalidateMode.always,
+                  validator: validatePhone,
+                  inputFormatters: <TextInputFormatter>[
+                    FilteringTextInputFormatter.digitsOnly,
+                  ],
+                  keyboardType: TextInputType.phone,
+                  controller: phoneController,
+                  obscureText: false,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
+                  decoration: InputDecoration(
+                    hintText: "Phone",
+                    hintStyle: TextStyle(color: Colors.black),
+                    filled: true,
+                  ),
+                ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: TextFormField(
                   maxLength: 200,
                   autovalidateMode: AutovalidateMode.always,
-                  inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.singleLineFormatter,],
+                  inputFormatters: <TextInputFormatter>[
+                    FilteringTextInputFormatter.singleLineFormatter,
+                  ],
                   keyboardType: TextInputType.text,
                   controller: addressController,
                   obscureText: false,
                   style: TextStyle(
-                      color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500),
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
                   decoration: InputDecoration(
                     hintText: "Address",
                     hintStyle: TextStyle(color: Colors.black),
@@ -151,7 +167,8 @@ class _FormWidgetState extends State<FormWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: DropdownButtonFormField(
                   decoration: InputDecoration(
                     filled: true,
@@ -181,7 +198,8 @@ class _FormWidgetState extends State<FormWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: DropdownButtonFormField(
                   decoration: InputDecoration(
                     filled: true,
@@ -211,17 +229,22 @@ class _FormWidgetState extends State<FormWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: TextFormField(
                   maxLength: 6,
                   autovalidateMode: AutovalidateMode.always,
                   validator: validatePinCode,
-                  inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly,],
+                  inputFormatters: <TextInputFormatter>[
+                    FilteringTextInputFormatter.digitsOnly,
+                  ],
                   keyboardType: TextInputType.number,
                   controller: pincodeController,
                   obscureText: false,
                   style: TextStyle(
-                      color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500),
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
                   decoration: InputDecoration(
                     hintText: "PinCode",
                     hintStyle: TextStyle(color: Colors.black),
@@ -230,17 +253,22 @@ class _FormWidgetState extends State<FormWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: TextFormField(
                   autovalidateMode: AutovalidateMode.always,
                   validator: validateEmail,
                   maxLength: 50,
-                  inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.singleLineFormatter,],
+                  inputFormatters: <TextInputFormatter>[
+                    FilteringTextInputFormatter.singleLineFormatter,
+                  ],
                   keyboardType: TextInputType.emailAddress,
                   controller: emailController,
                   obscureText: false,
                   style: TextStyle(
-                      color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500),
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
                   decoration: InputDecoration(
                     hintText: "Email",
                     hintStyle: TextStyle(color: Colors.black),
@@ -249,17 +277,22 @@ class _FormWidgetState extends State<FormWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: TextFormField(
                   maxLength: 50,
                   autovalidateMode: AutovalidateMode.always,
                   validator: validatePassword,
-                  inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.singleLineFormatter,],
+                  inputFormatters: <TextInputFormatter>[
+                    FilteringTextInputFormatter.singleLineFormatter,
+                  ],
                   keyboardType: TextInputType.text,
                   controller: passwordController,
                   obscureText: false,
                   style: TextStyle(
-                      color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500),
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
                   decoration: InputDecoration(
                     hintText: "Password",
                     hintStyle: TextStyle(color: Colors.black),
@@ -267,7 +300,6 @@ class _FormWidgetState extends State<FormWidget> {
                   ),
                 ),
               ),
-
               Container(
                 margin: EdgeInsets.only(top: 20),
                 padding: EdgeInsets.only(left: 30),
@@ -391,7 +423,7 @@ class _FormWidgetState extends State<FormWidget> {
                         duration: Duration(seconds: 2),
                       ));
                       return;
-                    }else if (addressController.text.isEmpty) {
+                    } else if (addressController.text.isEmpty) {
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         content: Text(
                           "Please Enter Address Fields",
@@ -399,7 +431,7 @@ class _FormWidgetState extends State<FormWidget> {
                         duration: Duration(seconds: 2),
                       ));
                       return;
-                    }else if (pincodeController.text.isEmpty) {
+                    } else if (pincodeController.text.isEmpty) {
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         content: Text(
                           "Please Enter Pin code Fields",
@@ -407,7 +439,7 @@ class _FormWidgetState extends State<FormWidget> {
                         duration: Duration(seconds: 2),
                       ));
                       return;
-                    }else if (emailController.text.isEmpty) {
+                    } else if (emailController.text.isEmpty) {
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         content: Text(
                           "Please Enter Email Fields",
@@ -415,7 +447,7 @@ class _FormWidgetState extends State<FormWidget> {
                         duration: Duration(seconds: 2),
                       ));
                       return;
-                    }else if (passwordController.text.isEmpty) {
+                    } else if (passwordController.text.isEmpty) {
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         content: Text(
                           "Please Enter Password Fields",
@@ -423,7 +455,7 @@ class _FormWidgetState extends State<FormWidget> {
                         duration: Duration(seconds: 2),
                       ));
                       return;
-                    }else if (dropdownvaluecity.isEmpty) {
+                    } else if (dropdownvaluecity.isEmpty) {
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         content: Text(
                           "Please Enter City Fields",
@@ -431,7 +463,7 @@ class _FormWidgetState extends State<FormWidget> {
                         duration: Duration(seconds: 2),
                       ));
                       return;
-                    }else if (dropdownvaluestate.isEmpty) {
+                    } else if (dropdownvaluestate.isEmpty) {
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         content: Text(
                           "Please Enter State Fields",
@@ -439,7 +471,7 @@ class _FormWidgetState extends State<FormWidget> {
                         duration: Duration(seconds: 2),
                       ));
                       return;
-                    }else if (_selectedValue.toString().isEmpty) {
+                    } else if (_selectedValue.toString().isEmpty) {
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         content: Text(
                           "Please Enter Gender Fields",
@@ -465,7 +497,8 @@ class _FormWidgetState extends State<FormWidget> {
                         .set({
                       'name': nameController.text.toUpperCase().toString(),
                       'phone': phoneController.text.toString(),
-                      'address': addressController.text.toUpperCase().toString(),
+                      'address':
+                          addressController.text.toUpperCase().toString(),
                       'email': emailController.text.toUpperCase().toString(),
                       'password': passwordController.text.toString(),
                       'pincode': pincodeController.text.toString(),
@@ -485,8 +518,13 @@ class _FormWidgetState extends State<FormWidget> {
                     pincodeController.clear();
                     FocusScope.of(context).unfocus();
                   },
-                  child: const Text("Add",style: TextStyle(
-                      color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500),),
+                  child: const Text(
+                    "Add",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500),
+                  ),
                 ),
               )
             ],
@@ -497,7 +535,7 @@ class _FormWidgetState extends State<FormWidget> {
   }
 
   Padding commonTestField(
-      hint, controller, hide, keyboardType, inputFormatters,validate) {
+      hint, controller, hide, keyboardType, inputFormatters, validate) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
       child: TextFormField(
