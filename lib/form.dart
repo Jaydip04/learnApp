@@ -13,11 +13,11 @@ class FormWidget extends StatefulWidget {
 class _FormWidgetState extends State<FormWidget> {
 
   String? validatePhone(String? value) {
-    const pattern =r'[1-9][0-9]{9}';
+    const pattern =r'[7,8,9][0-9]{9}';
     final regex = RegExp(pattern);
 
     return value!.isNotEmpty && !regex.hasMatch(value)
-        ? 'Enter a valid Phone Number like "1234567890"'
+        ? 'Enter a valid Phone Number like start with "7,8,9"'
         : null;
   }
 
@@ -31,7 +31,7 @@ class _FormWidgetState extends State<FormWidget> {
   }
 
   String? validatePinCode(String? value) {
-    const pattern = r'[0-9][0-9]{5}';
+    const pattern = r'[1-9][0-9]{5}';
     final regex = RegExp(pattern);
 
     return value!.isNotEmpty && !regex.hasMatch(value)
@@ -44,7 +44,7 @@ class _FormWidgetState extends State<FormWidget> {
     final regex = RegExp(pattern);
 
     return value!.isNotEmpty && !regex.hasMatch(value)
-        ? 'Enter a valid password "8" number'
+        ? 'Enter a valid password, Minimum 8 number'
         : null;
   }
 
@@ -97,6 +97,7 @@ class _FormWidgetState extends State<FormWidget> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
               child: TextFormField(
+                maxLength: 100,
                 autovalidateMode: AutovalidateMode.always,
                 inputFormatters: <TextInputFormatter>[ FilteringTextInputFormatter.singleLineFormatter,],
                 keyboardType: TextInputType.name,
@@ -108,26 +109,13 @@ class _FormWidgetState extends State<FormWidget> {
                   hintText: "Name",
                   hintStyle: TextStyle(color: Colors.black),
                   filled: true,
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                    borderSide: const BorderSide(
-                      color: Colors.black,
-                      width: 2,
-                    ),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                    borderSide: const BorderSide(
-                      color: Colors.black,
-                      width: 1,
-                    ),
-                  ),
                 ),
               ),
             ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: TextFormField(
+                  maxLength: 10,
                   autovalidateMode: AutovalidateMode.always,
                   validator: validatePhone,
                   inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly,],
@@ -140,26 +128,14 @@ class _FormWidgetState extends State<FormWidget> {
                     hintText: "Phone",
                     hintStyle: TextStyle(color: Colors.black),
                     filled: true,
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: const BorderSide(
-                        color: Colors.black,
-                        width: 2,
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: const BorderSide(
-                        color: Colors.black,
-                        width: 1,
-                      ),
-                    ),
+
                   ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: TextFormField(
+                  maxLength: 200,
                   autovalidateMode: AutovalidateMode.always,
                   inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.singleLineFormatter,],
                   keyboardType: TextInputType.text,
@@ -171,20 +147,6 @@ class _FormWidgetState extends State<FormWidget> {
                     hintText: "Address",
                     hintStyle: TextStyle(color: Colors.black),
                     filled: true,
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: const BorderSide(
-                        color: Colors.black,
-                        width: 2,
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: const BorderSide(
-                        color: Colors.black,
-                        width: 1,
-                      ),
-                    ),
                   ),
                 ),
               ),
@@ -192,20 +154,6 @@ class _FormWidgetState extends State<FormWidget> {
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: DropdownButtonFormField(
                   decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: const BorderSide(
-                        color: Colors.black,
-                        width: 2,
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: const BorderSide(
-                        color: Colors.black,
-                        width: 1,
-                      ),
-                    ),
                     filled: true,
                     hintText: "city",
                   ),
@@ -236,20 +184,6 @@ class _FormWidgetState extends State<FormWidget> {
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: DropdownButtonFormField(
                   decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: const BorderSide(
-                        color: Colors.black,
-                        width: 2,
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: const BorderSide(
-                        color: Colors.black,
-                        width: 1,
-                      ),
-                    ),
                     filled: true,
                     hintText: "city",
                   ),
@@ -279,6 +213,7 @@ class _FormWidgetState extends State<FormWidget> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: TextFormField(
+                  maxLength: 6,
                   autovalidateMode: AutovalidateMode.always,
                   validator: validatePinCode,
                   inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly,],
@@ -291,20 +226,6 @@ class _FormWidgetState extends State<FormWidget> {
                     hintText: "PinCode",
                     hintStyle: TextStyle(color: Colors.black),
                     filled: true,
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: const BorderSide(
-                        color: Colors.black,
-                        width: 2,
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: const BorderSide(
-                        color: Colors.black,
-                        width: 1,
-                      ),
-                    ),
                   ),
                 ),
               ),
@@ -313,6 +234,7 @@ class _FormWidgetState extends State<FormWidget> {
                 child: TextFormField(
                   autovalidateMode: AutovalidateMode.always,
                   validator: validateEmail,
+                  maxLength: 50,
                   inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.singleLineFormatter,],
                   keyboardType: TextInputType.emailAddress,
                   controller: emailController,
@@ -323,26 +245,13 @@ class _FormWidgetState extends State<FormWidget> {
                     hintText: "Email",
                     hintStyle: TextStyle(color: Colors.black),
                     filled: true,
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: const BorderSide(
-                        color: Colors.black,
-                        width: 2,
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: const BorderSide(
-                        color: Colors.black,
-                        width: 1,
-                      ),
-                    ),
                   ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: TextFormField(
+                  maxLength: 50,
                   autovalidateMode: AutovalidateMode.always,
                   validator: validatePassword,
                   inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.singleLineFormatter,],
@@ -355,20 +264,6 @@ class _FormWidgetState extends State<FormWidget> {
                     hintText: "Password",
                     hintStyle: TextStyle(color: Colors.black),
                     filled: true,
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: const BorderSide(
-                        color: Colors.black,
-                        width: 2,
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: const BorderSide(
-                        color: Colors.black,
-                        width: 1,
-                      ),
-                    ),
                   ),
                 ),
               ),
