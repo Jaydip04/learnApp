@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "467445813310",
+    "project_id": "learn-app-eb420",
+    "storage_bucket": "learn-app-eb420.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:467445813310:android:03bb7ddaad0ca84170816f",
+        "android_client_info": {
+          "package_name": "com.example.learnapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8fy2lQZ8r6nzkhX6pD1Z0VHFqe3k5XEE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
