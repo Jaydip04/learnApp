@@ -3,14 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class FormWidget extends StatefulWidget {
-  const FormWidget({super.key});
+class Form_Widget extends StatefulWidget {
+  const Form_Widget({super.key});
 
   @override
-  State<FormWidget> createState() => _FormWidgetState();
+  State<Form_Widget> createState() => _FormWidgetState();
 }
 
-class _FormWidgetState extends State<FormWidget> {
+class _FormWidgetState extends State<Form_Widget> {
   String? validatePhone(String? value) {
     const pattern = r'[7,8,9][0-9]{9}';
     final regex = RegExp(pattern);
@@ -88,96 +88,61 @@ class _FormWidgetState extends State<FormWidget> {
         ),
       ),
       body: Container(
-        // color: bgcolor,
         child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(
-                height: 25,
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                child: TextFormField(
-                  maxLength: 100,
-                  autovalidateMode: AutovalidateMode.always,
-                  inputFormatters: <TextInputFormatter>[
-                    FilteringTextInputFormatter.singleLineFormatter,
-                  ],
-                  keyboardType: TextInputType.name,
-                  controller: nameController,
-                  obscureText: false,
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500),
-                  decoration: InputDecoration(
-                    hintText: "Name",
-                    hintStyle: TextStyle(color: Colors.black),
-                    filled: true,
-                  ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  height: 25,
                 ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                child: TextFormField(
-                  maxLength: 10,
-                  autovalidateMode: AutovalidateMode.always,
-                  validator: validatePhone,
-                  inputFormatters: <TextInputFormatter>[
-                    FilteringTextInputFormatter.digitsOnly,
-                  ],
-                  keyboardType: TextInputType.phone,
-                  controller: phoneController,
-                  obscureText: false,
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500),
-                  decoration: InputDecoration(
-                    hintText: "Phone",
-                    hintStyle: TextStyle(color: Colors.black),
-                    filled: true,
-                  ),
+                TextFormField(
+                    maxLength: 100,
+                    autovalidateMode: AutovalidateMode.always,
+                    inputFormatters: <TextInputFormatter>[
+                      FilteringTextInputFormatter.singleLineFormatter,
+                    ],
+                    keyboardType: TextInputType.name,
+                    controller: nameController,
+                    obscureText: false,
+                    style: commonTextStyle(),
+                    decoration: commonInputDecoration("Name")),
+                SizedBox(
+                  height: 10,
                 ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                child: TextFormField(
-                  maxLength: 200,
-                  autovalidateMode: AutovalidateMode.always,
-                  inputFormatters: <TextInputFormatter>[
-                    FilteringTextInputFormatter.singleLineFormatter,
-                  ],
-                  keyboardType: TextInputType.text,
-                  controller: addressController,
-                  obscureText: false,
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500),
-                  decoration: InputDecoration(
-                    hintText: "Address",
-                    hintStyle: TextStyle(color: Colors.black),
-                    filled: true,
-                  ),
+                TextFormField(
+                    maxLength: 10,
+                    autovalidateMode: AutovalidateMode.always,
+                    validator: validatePhone,
+                    inputFormatters: <TextInputFormatter>[
+                      FilteringTextInputFormatter.digitsOnly,
+                    ],
+                    keyboardType: TextInputType.phone,
+                    controller: phoneController,
+                    obscureText: false,
+                    style: commonTextStyle(),
+                    decoration: commonInputDecoration("Phone")),
+                SizedBox(
+                  height: 10,
                 ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                child: DropdownButtonFormField(
-                  decoration: InputDecoration(
-                    filled: true,
-                    hintText: "city",
-                  ),
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500),
+                TextFormField(
+                    maxLength: 200,
+                    autovalidateMode: AutovalidateMode.always,
+                    inputFormatters: <TextInputFormatter>[
+                      FilteringTextInputFormatter.singleLineFormatter,
+                    ],
+                    keyboardType: TextInputType.text,
+                    controller: addressController,
+                    obscureText: false,
+                    style: commonTextStyle(),
+                    decoration: commonInputDecoration("Address")),
+                SizedBox(
+                  height: 10,
+                ),
+                DropdownButtonFormField(
+                  decoration: commonInputDecoration("city"),
+                  style: commonTextStyle(),
                   value: dropdownvaluecity,
                   icon: const Icon(
                     Icons.keyboard_arrow_down,
@@ -196,19 +161,12 @@ class _FormWidgetState extends State<FormWidget> {
                     });
                   },
                 ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                child: DropdownButtonFormField(
-                  decoration: InputDecoration(
-                    filled: true,
-                    hintText: "city",
-                  ),
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500),
+                SizedBox(
+                  height: 30,
+                ),
+                DropdownButtonFormField(
+                  decoration: commonInputDecoration("State"),
+                  style: commonTextStyle(),
                   value: dropdownvaluestate,
                   iconSize: 26,
                   icon: const Icon(
@@ -227,94 +185,63 @@ class _FormWidgetState extends State<FormWidget> {
                     });
                   },
                 ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                child: TextFormField(
-                  maxLength: 6,
-                  autovalidateMode: AutovalidateMode.always,
-                  validator: validatePinCode,
-                  inputFormatters: <TextInputFormatter>[
-                    FilteringTextInputFormatter.digitsOnly,
-                  ],
-                  keyboardType: TextInputType.number,
-                  controller: pincodeController,
-                  obscureText: false,
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500),
-                  decoration: InputDecoration(
-                    hintText: "PinCode",
-                    hintStyle: TextStyle(color: Colors.black),
-                    filled: true,
+                SizedBox(
+                  height: 30,
+                ),
+                TextFormField(
+                    maxLength: 6,
+                    autovalidateMode: AutovalidateMode.always,
+                    validator: validatePinCode,
+                    inputFormatters: <TextInputFormatter>[
+                      FilteringTextInputFormatter.digitsOnly,
+                    ],
+                    keyboardType: TextInputType.number,
+                    controller: pincodeController,
+                    obscureText: false,
+                    style: commonTextStyle(),
+                    decoration: commonInputDecoration("PinCode")),
+                SizedBox(
+                  height: 10,
+                ),
+                TextFormField(
+                    autovalidateMode: AutovalidateMode.always,
+                    validator: validateEmail,
+                    maxLength: 50,
+                    inputFormatters: <TextInputFormatter>[
+                      FilteringTextInputFormatter.singleLineFormatter,
+                    ],
+                    keyboardType: TextInputType.emailAddress,
+                    controller: emailController,
+                    obscureText: false,
+                    style: commonTextStyle(),
+                    decoration: commonInputDecoration("Email")),
+                SizedBox(
+                  height: 10,
+                ),
+                TextFormField(
+                    maxLength: 50,
+                    autovalidateMode: AutovalidateMode.always,
+                    validator: validatePassword,
+                    inputFormatters: <TextInputFormatter>[
+                      FilteringTextInputFormatter.singleLineFormatter,
+                    ],
+                    keyboardType: TextInputType.text,
+                    controller: passwordController,
+                    obscureText: false,
+                    style: commonTextStyle(),
+                    decoration: commonInputDecoration("Password")),
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 20),
+                  width: MediaQuery.of(context).size.width,
+                  child: Text(
+                    "Gender",
+                    style: commonTextStyle()
                   ),
                 ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                child: TextFormField(
-                  autovalidateMode: AutovalidateMode.always,
-                  validator: validateEmail,
-                  maxLength: 50,
-                  inputFormatters: <TextInputFormatter>[
-                    FilteringTextInputFormatter.singleLineFormatter,
-                  ],
-                  keyboardType: TextInputType.emailAddress,
-                  controller: emailController,
-                  obscureText: false,
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500),
-                  decoration: InputDecoration(
-                    hintText: "Email",
-                    hintStyle: TextStyle(color: Colors.black),
-                    filled: true,
-                  ),
-                ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                child: TextFormField(
-                  maxLength: 50,
-                  autovalidateMode: AutovalidateMode.always,
-                  validator: validatePassword,
-                  inputFormatters: <TextInputFormatter>[
-                    FilteringTextInputFormatter.singleLineFormatter,
-                  ],
-                  keyboardType: TextInputType.text,
-                  controller: passwordController,
-                  obscureText: false,
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500),
-                  decoration: InputDecoration(
-                    hintText: "Password",
-                    hintStyle: TextStyle(color: Colors.black),
-                    filled: true,
-                  ),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(top: 20),
-                padding: EdgeInsets.only(left: 30),
-                width: MediaQuery.of(context).size.width,
-                child: Text(
-                  "Gender",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                child: Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Column(
@@ -334,10 +261,7 @@ class _FormWidgetState extends State<FormWidget> {
                                 }),
                             Text(
                               'Male',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500),
+                              style: commonTextStyle()
                             )
                           ],
                         ),
@@ -361,10 +285,7 @@ class _FormWidgetState extends State<FormWidget> {
                             }),
                         Text(
                           'Female',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500),
+                          style: commonTextStyle()
                         )
                       ],
                     ),
@@ -386,24 +307,18 @@ class _FormWidgetState extends State<FormWidget> {
                             }),
                         Text(
                           'Other',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500),
+                          style: commonTextStyle()
                         )
                       ],
                     ),
                   ],
                 ),
-              ),
-              const SizedBox(
-                height: 25,
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: Size(390, 50),
+                const SizedBox(
+                  height: 25,
+                ),
+                OutlinedButton(
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0))),
                   ),
                   onPressed: () {
                     // Check if any of the text fields are emply?
@@ -525,48 +440,26 @@ class _FormWidgetState extends State<FormWidget> {
                         fontSize: 16,
                         fontWeight: FontWeight.w500),
                   ),
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 
-  Padding commonTestField(
-      hint, controller, hide, keyboardType, inputFormatters, validate) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-      child: TextFormField(
-        autovalidateMode: AutovalidateMode.always,
-        validator: validate,
-        inputFormatters: <TextInputFormatter>[inputFormatters],
-        keyboardType: keyboardType,
-        controller: controller,
-        obscureText: hide,
-        style: TextStyle(
-            color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500),
-        decoration: InputDecoration(
-          hintText: hint,
-          hintStyle: TextStyle(color: Colors.black),
-          filled: true,
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20),
-            borderSide: const BorderSide(
-              color: Colors.black,
-              width: 2,
-            ),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20),
-            borderSide: const BorderSide(
-              color: Colors.black,
-              width: 1,
-            ),
-          ),
-        ),
-      ),
+  InputDecoration commonInputDecoration(hint) {
+    return InputDecoration(
+      hintText: hint,
+      hintStyle: TextStyle(color: Colors.black),
     );
+  }
+
+  TextStyle commonTextStyle() {
+    return TextStyle(
+        color: Colors.black,
+        fontSize: 16,
+        fontWeight: FontWeight.w500);
   }
 }

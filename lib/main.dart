@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Learn App",
-      home: FormWidget()
+      home: Form_Widget()
     );
   }
 }
