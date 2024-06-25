@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:learnapp/Widget_demo.dart';
-import 'package:learnapp/Widget_test.dart';
+import 'package:learnapp/segmented_button_widget.dart';
 import 'package:learnapp/form.dart';
 
 Future main() async {
