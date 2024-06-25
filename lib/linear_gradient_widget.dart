@@ -24,7 +24,7 @@ class _Linear_Gradient_WidgetState extends State<Linear_Gradient_Widget> {
                   Color(0xfff2dd22),
                 ],
               ).createShader(bounds),
-          child: Text("Hello World!",style: TextStyle(color: Colors.white,fontSize: 48,fontWeight: FontWeight.bold),),
+          child: RepaintBoundary(child: Text("Hello World!",style: TextStyle(color: Colors.white,fontSize: 48,fontWeight: FontWeight.bold),)),
         )
         // Container(
         //   decoration: BoxDecoration(
