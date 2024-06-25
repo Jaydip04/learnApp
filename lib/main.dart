@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:learnapp/flutter_rating_bar_widget.dart';
+import 'package:learnapp/linear_gradient_widget.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Learn App",
-      home: Flutter_Rating_Bar_Widget(),
+      home: Linear_Gradient_Widget(),
     );
   }
 }
