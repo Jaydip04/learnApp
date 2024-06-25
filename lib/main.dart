@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:learnapp/Widget_demo.dart';
 import 'package:learnapp/drop_down_menu.dart';
+import 'package:learnapp/fl_chart_widget.dart';
 import 'package:learnapp/over_lay_portal.dart';
 import 'package:learnapp/segmented_button_widget.dart';
 import 'package:learnapp/form.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Learn App",
-      home: Over_Lay_Portal(),
+      home: Fl_Chart_Widget(),
     );
   }
 }
