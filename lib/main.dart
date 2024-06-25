@@ -1,13 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:learnapp/Widget_demo.dart';
-import 'package:learnapp/drop_down_menu.dart';
-import 'package:learnapp/fl_chart_widget.dart';
-import 'package:learnapp/flutter_animate_widget.dart';
-import 'package:learnapp/over_lay_portal.dart';
-import 'package:learnapp/segmented_button_widget.dart';
-import 'package:learnapp/form.dart';
+import 'package:learnapp/flutter_rating_bar_widget.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,7 +27,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Learn App",
-      home: Flutter_Animate_Widget(),
+      home: Flutter_Rating_Bar_Widget(),
     );
   }
 }
