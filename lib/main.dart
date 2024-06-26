@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:learnapp/Flow_Widget.dart';
+import 'package:learnapp/Hero_Widget.dart';
 import 'package:learnapp/List_Widget.dart';
 
 
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Learn App",
-      home: list_widget(),
+      home: hero_widget()
     );
   }
 }
