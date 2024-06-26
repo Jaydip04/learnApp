@@ -14,15 +14,21 @@ class _list_widgetState extends State<list_widget> {
     return Scaffold(
       body: Center(
         child: RefreshIndicator(
-          // triggerMode: RefreshIndicatorTriggerMode.anywhere,
-          triggerMode: RefreshIndicatorTriggerMode.onEdge,
+          triggerMode: RefreshIndicatorTriggerMode.anywhere,
+          // triggerMode: RefreshIndicatorTriggerMode.onEdge,
           edgeOffset: 50,
           backgroundColor: Colors.black,
           displacement: 100,
           strokeWidth: 3,
           color: Colors.white,
           onRefresh: _refresh,
-            child: ListView()),
+            child:ListView.builder(
+                itemCount: 20,
+                itemBuilder: (BuildContext context, int index) {
+                  return ListTile(
+                      leading: const Icon(Icons.person),
+                      title: Text("List item $index"));
+                })),
       ),
     );
   }

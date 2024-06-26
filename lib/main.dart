@@ -5,6 +5,7 @@ import 'package:learnapp/Flow_Widget.dart';
 import 'package:learnapp/Flutter_Logo.dart';
 import 'package:learnapp/Hero_Widget.dart';
 import 'package:learnapp/List_Widget.dart';
+import 'package:learnapp/Scrollbar_widget.dart';
 import 'package:learnapp/animated_text_kit.dart';
 
 
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Learn App",
-      home: flutter_logo()
+      home: scroll_bar()
     );
   }
 }
