@@ -1,12 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:learnapp/Flow_Widget.dart';
-import 'package:learnapp/Flutter_Logo.dart';
-import 'package:learnapp/Hero_Widget.dart';
-import 'package:learnapp/List_Widget.dart';
-import 'package:learnapp/Scrollbar_widget.dart';
-import 'package:learnapp/animated_text_kit.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 
 
@@ -34,7 +29,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Learn App",
-      home: scroll_bar()
+      home: RotatedBox(
+        quarterTurns: 1,
+        child: Text("Hello"),
+      )
     );
   }
 }
