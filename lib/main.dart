@@ -1,9 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:learnapp/flutter_rating_bar_widget.dart';
-import 'package:learnapp/linear_gradient_widget.dart';
+import 'package:learnapp/Flow_Widget.dart';
+
+
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +19,6 @@ Future main() async {
   } else {
     await Firebase.initializeApp();
   }
-  debugRepaintRainbowEnabled = true;
   runApp(MyApp());
 }
 class MyApp extends StatelessWidget {
@@ -30,7 +29,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Learn App",
-      home: Linear_Gradient_Widget(),
+      home:flow_widget(),
     );
   }
 }
