@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:learnapp/Flow_Widget.dart';
 import 'package:learnapp/Hero_Widget.dart';
 import 'package:learnapp/List_Widget.dart';
+import 'package:learnapp/animated_text_kit.dart';
 
 
 
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Learn App",
-      home: hero_widget()
+      home: animated_text_kit(),
     );
   }
 }
