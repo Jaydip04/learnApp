@@ -1,7 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+
+import 'flutter_slidable_widget.dart';
 
 
 
@@ -29,10 +30,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Learn App",
-      home: RotatedBox(
-        quarterTurns: 1,
-        child: Text("Hello"),
-      )
+      home:flutter_slidable_widget()
     );
   }
 }
