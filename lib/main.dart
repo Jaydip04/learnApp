@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:learnapp/Drawer_Widget.dart';
 import 'package:learnapp/List_Wheel_Scroll_View_widget.dart';
+import 'package:learnapp/Tab_Bar_Widget.dart';
 
 import 'Snack_Bar_widget.dart';
 
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Learn App",
-      home: drawer_widget()
+      home: tab_bar_widget()
     );
   }
 }
