@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:learnapp/About_Dialog_widget.dart';
 import 'package:learnapp/Grid_View_widget.dart';
 import 'package:learnapp/Interactive_Viewer.dart';
 import 'package:learnapp/Sliver_App_Bar.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Learn App",
-      home:sliver_app_bar()
+      home:about_dialog_widget()
     );
   }
 }
