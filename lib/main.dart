@@ -5,6 +5,7 @@ import 'package:learnapp/Drawer_Widget.dart';
 import 'package:learnapp/List_Wheel_Scroll_View_widget.dart';
 import 'package:learnapp/Tab_Bar_Widget.dart';
 
+import 'Alert_Dialog_Widget.dart';
 import 'Snack_Bar_widget.dart';
 
 Future main() async {
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Learn App",
-      home: tab_bar_widget()
+      home: alert_dialog_widget()
     );
   }
 }
