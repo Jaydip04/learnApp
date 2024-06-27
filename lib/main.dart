@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:learnapp/Grid_View_widget.dart';
 import 'package:learnapp/Interactive_Viewer.dart';
+import 'package:learnapp/Sliver_App_Bar.dart';
 import 'package:learnapp/Switch_widget.dart';
 
 Future main() async {
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Learn App",
-      home:interactive_viewer_widget()
+      home:sliver_app_bar()
     );
   }
 }
