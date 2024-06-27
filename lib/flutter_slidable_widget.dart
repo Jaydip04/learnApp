@@ -21,7 +21,6 @@ class _flutter_slidable_widgetState extends State<flutter_slidable_widget> with 
             itemBuilder: (BuildContext context, int index) {
               return Slidable(
                 key: const ValueKey(0),
-
                 // The start action pane is the one at the left or the top side.
                 startActionPane: ActionPane(
                   // A motion is a widget used to control how the pane animates.
@@ -50,7 +49,6 @@ class _flutter_slidable_widgetState extends State<flutter_slidable_widget> with 
                     ),
                   ],
                 ),
-
                 // The end action pane is the one at the right or the bottom side.
                 endActionPane: const ActionPane(
                   motion: ScrollMotion(),
@@ -82,7 +80,5 @@ class _flutter_slidable_widgetState extends State<flutter_slidable_widget> with 
       ),
     );
   }
-
-
 }
 void doNothing(BuildContext context) {}
