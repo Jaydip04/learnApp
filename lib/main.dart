@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:learnapp/About_Dialog_widget.dart';
 import 'package:learnapp/Checkbox_List_Tile_widget.dart';
+import 'package:learnapp/Cupertino_Activity_Indicator_widget.dart';
 import 'package:learnapp/Grid_View_widget.dart';
 import 'package:learnapp/Interactive_Viewer.dart';
 import 'package:learnapp/Sliver_App_Bar.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Learn App",
-      home:checkbox_list_tile_file()
+      home:cupertino_indicator_widget()
     );
   }
 }
