@@ -23,7 +23,7 @@ class _sharder_maskState extends State<sharder_mask> {
               ],
             tileMode: TileMode.mirror,
             ).createShader(bounds),
-          child: Text("Jaydip Tank",style: TextStyle(color: Colors.white ,fontSize: 48),)
+          child: Text("Jaydip Tank",style: TextStyle(color: Colors.white,fontSize: 48),)
         ),
       ),
     );
