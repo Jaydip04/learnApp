@@ -8,6 +8,7 @@ import 'package:learnapp/Cupertino_Activity_Indicator_widget.dart';
 import 'package:learnapp/Grid_View_widget.dart';
 import 'package:learnapp/Ignore_Pointer_widget.dart';
 import 'package:learnapp/Interactive_Viewer.dart';
+import 'package:learnapp/Shader_Mask.dart';
 import 'package:learnapp/Sliver_App_Bar.dart';
 import 'package:learnapp/Switch_widget.dart';
 
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Learn App",
-      home:circle_progress_indicator_widget()
+      home: sharder_mask()
     );
   }
 }
