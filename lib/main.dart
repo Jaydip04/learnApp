@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:learnapp/About_Dialog_widget.dart';
 import 'package:learnapp/Checkbox_List_Tile_widget.dart';
+import 'package:learnapp/Circle_Progress_Indicator_widget.dart';
 import 'package:learnapp/Cupertino_Activity_Indicator_widget.dart';
 import 'package:learnapp/Grid_View_widget.dart';
 import 'package:learnapp/Ignore_Pointer_widget.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Learn App",
-      home:ignore_pointer_widget()
+      home:circle_progress_indicator_widget()
     );
   }
 }
