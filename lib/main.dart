@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:learnapp/Grid_View_widget.dart';
+import 'package:learnapp/Interactive_Viewer.dart';
 import 'package:learnapp/Switch_widget.dart';
 
 Future main() async {
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Learn App",
-      home: grid_view_widget()
+      home:interactive_viewer_widget()
     );
   }
 }
