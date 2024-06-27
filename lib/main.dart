@@ -1,11 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:learnapp/Physical_Model_Widget.dart';
-
-import 'flutter_slidable_widget.dart';
-
-
+import 'package:learnapp/Switch_widget.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,7 +27,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Learn App",
-      home: physical_model_widget()
+      home: switch_widegt(),
     );
   }
 }
