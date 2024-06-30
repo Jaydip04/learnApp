@@ -5,6 +5,7 @@ import 'package:learnapp/Data_Table_Widget.dart';
 import 'package:learnapp/Drawer_Widget.dart';
 import 'package:learnapp/List_Wheel_Scroll_View_widget.dart';
 import 'package:learnapp/Tab_Bar_Widget.dart';
+import 'package:learnapp/passValue/First_Screen.dart';
 
 import 'Alert_Dialog_Widget.dart';
 import 'Snack_Bar_widget.dart';
@@ -33,7 +34,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Learn App",
-      home: data_table_widget()
+      home: first_screen(),
+
     );
   }
 }
