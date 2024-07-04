@@ -1,10 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:learnapp/Data_Table_Widget.dart';
-import 'package:learnapp/Drawer_Widget.dart';
-import 'package:learnapp/List_Wheel_Scroll_View_widget.dart';
-import 'package:learnapp/Tab_Bar_Widget.dart';
 import 'package:learnapp/passValue/First_Screen.dart';
 
 import 'Alert_Dialog_Widget.dart';
