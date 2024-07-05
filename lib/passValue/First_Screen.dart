@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'Second_Screen.dart';
+import 'Third_Screen.dart';
 
 class first_screen extends StatefulWidget {
   const first_screen({super.key});
@@ -20,7 +21,6 @@ class _first_screenState extends State<first_screen> {
         ? 'Enter a valid email address like "Demo@demo.com"'
         : null;
   }
-
   final nameController = TextEditingController();
   final emailController = TextEditingController();
 
@@ -154,3 +154,5 @@ class _first_screenState extends State<first_screen> {
     );
   }
 }
+
+
